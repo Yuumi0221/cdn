@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>我眼中的***大学</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="768ab14a-a132-47ad-ae86-1b072c755ce6" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏛️</span></div><h1 class="page-title">我眼中的***大学</h1></header><div class="page-body"><h2 id="d3778406-7f89-4a8c-a1eb-57ebf7e27a0e" class="">别人宿舍门口</h2><div id="ca425268-ef6a-43cc-a935-87745f90833b" class="column-list"><div id="1d5aa7dd-d860-44e4-8f13-8a27d4c2c275" style="width:43.75%" class="column"><figure id="d457eae3-566b-4ca9-85c7-11aa73a5f55c" class="image"><a href="../../images/university/陈佩佩1.jpg"><img style="width:6240px" src="../../images/university/陈佩佩1.jpg"/></a></figure></div><div id="e86c46a1-420a-4285-a079-ee064ab37360" style="width:56.25%" class="column"><p id="57f7cfbf-d1e3-48a1-bf80-6a242a505552" class="">相机型号：富士X-S10</p><p id="92623cd1-cfe3-4606-a1dc-1440d4039dcc" class="">镜头型号：富士XF35mm F1.4</p><p id="744447a6-23bf-41e5-b6b5-9d41bde394e0" class="">等效焦距：53mm</p><p id="952a25a8-75c5-4105-87b9-3c7d88e636ef" class="">曝光时间：1/1100秒</p><p id="414d40dc-f7d6-40a3-b2bf-0ef74514f1e0" class="">光圈：f/6.4</p><p id="8be36399-4c70-456c-a2b1-fa435f9090ea" class="">感光度：3200</p></div></div><h2 id="6aceaecc-1fa3-40ae-bd9d-f3c1360c3c23" class="">蝴蝶</h2><div id="206bf677-1cb3-4c02-8da2-44d082ded97d" class="column-list"><div id="93c1f1ae-41d3-48c2-b503-0efcc3beba46" style="width:62.5%" class="column"><figure id="32f84c8e-f201-4cc8-9b35-b34df6960fab" class="image"><a href="../../images/university/陈佩佩2.png"><img style="width:1892px" src="../../images/university/陈佩佩2.png"/></a></figure></div><div id="86b2269f-2f44-436b-928f-eb837bafa219" style="width:37.5%" class="column"><p id="260819a7-3421-4616-8ec9-13e312e3de49" class="">手机型号：华为P30 Pro</p><p id="11ca8e08-d1a6-49f0-b45f-7951ae2b5998" class="">等效焦距：27mm</p><p id="5c3d0fb8-ada2-4ff8-8526-df2f63e8bbce" class="">曝光时间：1/5405秒</p><p id="7979ff5a-3996-464a-b420-65b543840391" class="">光圈：f/1.6</p><p id="46f63ccb-fa9b-4874-ab14-15e769291dcb" class="">感光度：50</p></div></div><h2 id="8550a2ca-b0c2-4e8b-98c3-55cb85e2c04d" class="">绿荫红楼</h2><div id="c711bf5e-eea6-4703-84ca-b15f0900535f" class="column-list"><div id="f6396df1-cc0a-4a2d-9dbb-06813b39f50a" style="width:62.5%" class="column"><figure id="4afa32c3-f017-4587-8b21-951370036e52" class="image"><a href="../../images/university/陈佩佩3.png"><img style="width:528px" src="../../images/university/陈佩佩3.png"/></a></figure></div><div id="e9514ee0-a016-42cc-9bcc-067236044353" style="width:37.49999999999999%" class="column"><p id="504a87d6-a919-48dc-a984-478e3ab30d7d" class="">手机型号：华为P30 Pro</p><p id="b7f5f768-8621-4dc2-8dc1-0737343f6504" class="">等效焦距：75mm</p><p id="7bbac985-34e6-425b-ad20-4aa76f71af9a" class="">曝光时间：1/138秒</p><p id="c9b5aacb-badf-4614-a539-073b65964b2b" class="">光圈：f/1.6</p><p id="7065121b-7973-40d4-8307-3ba98d19b05f" class="">感光度：50</p></div></div><h2 id="ccc1d9e6-54d6-40c7-a7b3-d4902d536f3d" class="">绿荫小路</h2><div id="9bfed989-34b9-4ce9-864c-e509aaf27651" class="column-list"><div id="f49f1964-1a6d-4e82-a398-dcadc62f662f" style="width:50%" class="column"><figure id="d22857fd-57a8-4f66-9f6c-ff83af52c61d" class="image"><a href="../../images/university/陈佩佩4.jpg"><img style="width:6240px" src="../../images/university/陈佩佩4.jpg"/></a></figure></div><div id="25f385de-f5e0-4d04-a968-0f88b5da0e39" style="width:50%" class="column"><p id="049e5eae-e075-4eb6-8cd0-8b401faa1a3e" class="">相机型号：富士X-S10</p><p id="1f950e61-15a2-463f-8c51-4fb7c017dd79" class="">镜头型号：富士XF35mm F1.4</p><p id="b2def160-a560-4171-a5c8-5eddcd20a104" class="">等效焦距：53mm</p><p id="d648796c-6f41-4a14-8452-fb21f2f83eb1" class="">曝光时间：1/1400秒</p><p id="9160cd1e-4fdd-4d12-918f-2c255e3fc59e" class="">光圈：f/7.1</p><p id="bae00e5b-a166-4a0c-9e0c-a05953fd587c" class="">感光度：1600</p></div></div><h2 id="6f0a6fc3-7daf-4b3e-8dbd-93be79b310e5" class="">夕阳与小河</h2><div id="200fb46a-3336-4cfa-b05c-e43da7dc2535" class="column-list"><div id="345971f7-c23f-49cd-84c1-dd08b3fa9123" style="width:62.5%" class="column"><figure id="34412abe-0352-4f45-a1e0-e62d08543e12" class="image"><a href="../../images/university/陈佩佩5.jpg"><img style="width:2736px" src="../../images/university/陈佩佩5.jpg"/></a></figure></div><div id="378268e0-1531-417a-b174-c4bf196f608b" style="width:37.49999999999999%" class="column"><p id="4f901d93-4b2f-4f51-b27a-9ff6856a2a32" class="">手机型号：华为P30 Pro</p><p id="6cf53982-231e-40c7-a057-3727e07c1017" class="">等效焦距：27mm</p><p id="596ff712-1fff-438d-89db-066204c88ede" class="">曝光时间：1/50秒</p><p id="596b61ee-57d4-4055-88a0-1899970692b1" class="">光圈：f/1.6</p><p id="dee1ecaa-05e5-4fd8-9dd4-315dbd71ecd4" class="">感光度：160</p></div></div><h2 id="2f813910-0944-44af-9756-d5714b90f6b1" class="">夜鹭</h2><div id="fe7d7abe-6934-481e-8031-a57c59b9da49" class="column-list"><div id="3c369c81-ed48-4eb6-b0c0-be3a802e92cf" style="width:62.5%" class="column"><figure id="3b5cd5e5-dabf-4fc8-b5d7-2ef9160f44c9" class="image"><a href="../../images/university/陈佩佩6.jpg"><img style="width:3648px" src="../../images/university/陈佩佩6.jpg"/></a></figure></div><div id="76d6a8e4-edb8-4d57-aa36-593b1947689d" style="width:37.5%" class="column"><p id="f6ed6cd1-0c45-4e93-8354-97b0fb64fdbe" class="">手机型号：华为P30 Pro</p><p id="5f6fa5d6-7cc8-4c11-bd90-1319c11b522b" class="">等效焦距：305mm</p><p id="251bb944-cef6-42ed-9d1f-473d237e7dd2" class="">曝光时间：1/50秒</p><p id="a464a4fe-28d2-432c-a070-0a2021f70da3" class="">光圈：f/3.4</p><p id="d98f0517-0f65-4288-946b-a4be9507320f" class="">感光度：64</p></div></div><h2 id="55a1e5ae-ffbe-44ae-aa82-c722b273d9b0" class="">夕阳与树影</h2><div id="b30f2805-2fb8-42a2-8060-bb4f9a917914" class="column-list"><div id="1a07d40b-9ab6-408a-9014-448e41814d84" style="width:50%" class="column"><figure id="238eb90c-fdc2-404e-8339-c670b5aca1b5" class="image"><a href="../../images/university/陈佩佩7.jpg"><img style="width:576px" src="../../images/university/陈佩佩7.jpg"/></a></figure></div><div id="191de2b6-dbef-4a0f-ba0d-dfb8046d22f8" style="width:49.99999999999999%" class="column"><p id="bcf4a2fa-46f2-47d1-96ed-b89f4374d9a6" class="">手机型号：华为P30 Pro</p><p id="3319ea00-01da-4360-bfa4-9f9a03467140" class="">等效焦距：170mm</p><p id="4c2fde31-8946-44e7-9d5d-faba30ed7e7d" class="">曝光时间：1/100秒</p><p id="4fd2acb5-9f98-4d04-a84c-730436ad0c96" class="">光圈：f/3.4</p><p id="c882e9e6-c564-4a6e-8a03-3b5bc07286ed" class="">感光度：80</p></div></div><h2 id="83d37fb6-7479-4f75-a32b-d5b934bac9cc" class="">眺望天空的少女</h2><div id="1ae0b073-f3bf-40e9-b04a-ee249d3dfad3" class="column-list"><div id="785109ee-3cd7-4d6f-bb80-1f3422ec9b9d" style="width:56.25%" class="column"><figure id="41b5f8d3-0520-450f-9a61-ba7d572e476e" class="image"><a href="../../images/university/陈佩佩8.jpg"><img style="width:6240px" src="../../images/university/陈佩佩8.jpg"/></a></figure></div><div id="b971b561-101f-4e8d-b07f-0270f27de3da" style="width:43.75%" class="column"><p id="f35f1ddd-78ba-434e-a4c9-3bec92083e8d" class="">相机型号：富士X-S10</p><p id="bda37408-c3b8-4f9f-bcb6-9581f2b87d25" class="">镜头型号：富士XF35mm F2</p><p id="56a2f791-aadf-40b0-babf-f85ac65ec318" class="">等效焦距：53mm</p><p id="8916640a-6567-408f-b392-0fca0b45ece3" class="">曝光时间：1/250秒</p><p id="7a0b9e91-c2f3-4a08-b691-8524b5d56bcb" class="">光圈：f/2.8</p><p id="b1f64b13-c77c-4403-90ba-dcc8e7e565ad" class="">感光度：640</p></div></div><h2 id="cb645483-260a-4aa7-bd1f-280386c8bdd3" class="">夕阳与楼阁</h2><div id="7c0ca565-cc3a-46ba-aae1-880baedd4bff" class="column-list"><div id="7ad6dd75-1096-402a-a4ba-a6770a523ef6" style="width:68.75%" class="column"><figure id="bbb455e5-16d8-4502-9ca5-998790322002" class="image"><a href="../../images/university/陈佩佩9.jpg"><img style="width:624px" src="../../images/university/陈佩佩9.jpg"/></a></figure></div><div id="1cbf2dd6-f458-4be5-ab14-8ff75bac25ea" style="width:31.249999999999993%" class="column"><p id="e20765fa-3495-4137-9084-f61e9df7f6b9" class="">手机型号：华为P30 Pro</p><p id="227d1a70-66c2-459f-aca6-2f4342ca18f4" class="">等效焦距：72mm</p><p id="5395b377-82c8-4126-92e6-858d981e51f4" class="">曝光时间：1/100秒</p><p id="e0fe80c6-a818-405f-8f40-3e45888aa183" class="">光圈：f/1.6</p><p id="d4e514fd-96be-4885-821b-5a03d706adc7" class="">感光度：64</p></div></article></body></html>

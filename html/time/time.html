@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>时间</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bebd01fc-d687-4d4b-a9b9-3b401fabd6b8" class="page sans"><header><img class="page-cover-image" src="../../images/time/2022_1020_14581600.jpg" style="object-position:center 68.89%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="../../images/time/Time.png"/></div><h1 class="page-title">时间</h1></header><div class="page-body"><p id="21cbab17-bd0b-43a8-a3bd-d6331089839d" class="">
+</p><div id="839a5530-a15e-47b6-b599-bded6b6bcc2c" class="column-list"><div id="0b5b3784-552b-4e29-930a-eaa90eb97dc8" style="width:31.25%" class="column"><p id="c4283003-c087-4e34-9f58-0ee2ee09b881" class="">
+</p><p id="97ce8280-d816-4b70-ba74-184d6dc5cb9f" class="">
+</p><p id="182fdafc-bb1a-4769-9505-bb08879747b1" class="">相机型号：富士X-S10</p><p id="685e28d7-1a57-4b42-8ada-8951a23761ed" class="">镜头型号：富士XF35mm F2</p><p id="77e2f3be-59f2-454b-bd62-394ecbdab7df" class="">等效焦距：53mm</p><p id="3c37383f-20a9-446a-8b88-4ff4734c614e" class="">曝光时间：1/250秒</p><p id="39bdc85e-4b3f-41f1-a0af-39fb77893857" class="">光圈：f/3.6</p><p id="267c7c3c-2c36-482a-a603-0c1d794df965" class="">感光度：640</p><ul id="2d697724-ced4-4771-85c9-04fdbdfc8d8a" class="block-color-gray_background toggle"><li><details close=""><summary>tips</summary><ul id="14f20cea-30a4-4a11-a829-b31c47907c69" class="bulleted-list"><li style="list-style-type:disc">停在绿叶间的枯叶</li></ul><ul id="396a7304-1150-48df-9c57-9419e6448e41" class="bulleted-list"><li style="list-style-type:disc">仿佛下一秒就会被大风刮走</li></ul></details></li></ul></div><div id="982d2366-9274-49de-b4a1-3a38b95f67f5" style="width:68.75%" class="column"><h2 id="b003600f-e8d1-4fe7-a492-5846b74e889d" class="" align="right">枯叶蝶</h2><figure id="99a4f368-d650-49c0-b58a-0ae697cabbca" class="image"><a href="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A92-%25E5%25B0%258F.png"><img style="width:3120px" src="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A92-%25E5%25B0%258F.png"/></a></figure></div></div><div id="a365f388-561d-47bb-bd41-92a6cfc76f0f" class="column-list"><div id="766b5400-9bdd-4e2c-a8d7-74a51954b7dc" style="width:50%" class="column"><h2 id="eca1da6d-aba5-4d08-bc14-b0f68be9be64" class="">轮</h2><figure id="1ae47715-f470-4ecc-a3b1-83ee90320c46" class="image"><a href="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A95-%25E5%25B0%258F.png"><img style="width:2080px" src="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A95-%25E5%25B0%258F.png"/></a></figure></div><div id="e69d5a8f-129f-4bd8-94ca-d8e4295e5b87" style="width:50%" class="column"><p id="330f6dda-1055-4545-885f-4c6b5f51cfd8" class="">
+</p><p id="8ef576d1-4534-44c8-95d4-71a4c19fd734" class="">
+</p><p id="b954a702-9c33-4ce4-af08-41e2898a49df" class="">相机型号：富士X-S10</p><p id="eb77b6ed-4303-4cd1-80af-15b33f6394a0" class="">镜头型号：富士XF35mm F2</p><p id="a64fa559-7e41-4d15-8c96-424d7f0158e4" class="">等效焦距：53mm</p><p id="5f4255cf-d487-4081-b23f-669ff1d0a6e0" class="">曝光时间：1/105秒</p><p id="ae85077d-3ac7-4914-b33d-6ec311038462" class="">光圈：f/2</p><p id="ec8058ff-3720-49c9-b78b-d35afc235387" class="">感光度：400</p><ul id="484c87fd-b175-4c3c-94a1-0fcb39c77957" class="block-color-gray_background toggle"><li><details close=""><summary>tips</summary><ul id="50001d7d-221c-4662-a418-92b8a635f2ef" class="bulleted-list"><li style="list-style-type:disc">满是尘土的车轮上的绿叶</li></ul><ul id="929bce0a-4c8c-48d1-8d76-50e662c1fb56" class="bulleted-list"><li style="list-style-type:disc">落在地上的枯叶</li></ul></details></li></ul></div></div><div id="af40854e-a8a6-4334-bbb2-3492d8292d87" class="column-list"><div id="f1a76c87-a95d-4b20-9a8d-45cda0ab027b" style="width:31.25%" class="column"><p id="72c19cd4-93fb-48a9-b506-e01a0500eac5" class="">
+</p><p id="000f989b-d859-4fd4-b7ec-db3653cd6c7b" class="">
+</p><p id="02a89b1d-cd9d-44a0-8768-d764ea55cabb" class="">相机型号：富士X-S10</p><p id="5302d0a3-4798-4cb0-9e66-ac6a2f7f7ab9" class="">镜头型号：富士XF35mm F2</p><p id="1f5e29d0-05b5-4ca7-8640-2027c86f4695" class="">等效焦距：53mm</p><p id="9b597a3c-c805-4f51-83a2-3582cb5a2740" class="">曝光时间：1/480秒</p><p id="65801035-d3ee-4e17-a890-9eb96fe6c094" class="">光圈：f/4</p><p id="6832c184-9404-4b61-8a2a-e9876de2b5c4" class="">感光度：320</p><ul id="ef906003-2bb9-42c6-ab93-434f718591d4" class="block-color-gray_background toggle"><li><details close=""><summary>tips</summary><ul id="b1c7d04a-3dea-4301-825d-b97bfca32510" class="bulleted-list"><li style="list-style-type:disc">阴影中倒水的老人</li></ul><ul id="29f96510-b010-4337-9f2c-311442d9ddcb" class="bulleted-list"><li style="list-style-type:disc">走在光里的年轻人</li></ul><ul id="6eac5011-65df-4b10-ba97-72fe5ce1e8a2" class="bulleted-list"><li style="list-style-type:disc">少年城</li></ul></details></li></ul></div><div id="66ae0920-52fc-462b-bd15-9f4e386de820" style="width:68.75%" class="column"><h2 id="c83cb40e-c6ea-452b-b216-1d7f7fe9fde1" class="" align="right">终不似，少年游</h2><figure id="9f83faf8-c539-49b9-901b-46d1a921912e" class="image"><a href="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A94-%25E5%25B0%258F.png"><img style="width:3120px" src="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A94-%25E5%25B0%258F.png"/></a></figure></div></div><div id="8ddec3cb-1beb-421f-a08b-565cd480c1db" class="column-list"><div id="a38dd347-5623-4415-9c85-4fc7cafec24c" style="width:56.25%" class="column"><h2 id="53ee9d64-1325-45ec-bd8a-e965cd29008b" class="">小城街头</h2><figure id="fd94830b-4d45-4b53-af4e-128032adac48" class="image"><a href="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A96-%25E5%25B0%258F.png"><img style="width:1983px" src="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A96-%25E5%25B0%258F.png"/></a></figure></div><div id="7f813e8e-4b5f-4186-98be-f5411dda3f06" style="width:43.75%" class="column"><p id="99beaaf5-7e5c-4030-9916-09f9e7c5243c" class="">
+</p><p id="d0f09cfc-31a8-4478-a7b9-18fd7bfbc034" class="">
+</p><p id="a573305b-c042-4c72-8eea-687b8146eacb" class="">相机型号：富士X-S10</p><p id="6f5922cd-3807-4da8-a77e-30404a9e8ed0" class="">镜头型号：富士XF35mm F1.4</p><p id="76779069-43b7-4dbf-9b66-99d17f3fd650" class="">等效焦距：53mm</p><p id="7b73606c-1434-4bc5-9bc8-b304775dbc91" class="">曝光时间：1/210秒</p><p id="e7143e13-d302-4185-b861-264486b45bf7" class="">光圈：f/2.8</p><p id="55a1ac3a-4a5b-4adb-b900-8e1d929b4052" class="">感光度：640</p><ul id="9d3003cb-c3ef-4cfa-8df8-777a3a4543e2" class="block-color-gray_background toggle"><li><details close=""><summary>tips</summary><ul id="e21770e9-54e4-4708-a289-9d85b04602cf" class="bulleted-list"><li style="list-style-type:disc">画在老房子墙上的上世纪街景</li></ul><ul id="0eb373d0-f5ab-4955-9c26-4f0ff110ccbc" class="bulleted-list"><li style="list-style-type:disc">吊下的实物篮子</li></ul><ul id="a7869ee4-e9df-4a3d-a333-51453abe7618" class="bulleted-list"><li style="list-style-type:disc">背后灰蒙蒙的参天高楼</li></ul></details></li></ul></div></div><div id="01e4ecd5-888a-4323-bd4c-11c1a5c85c24" class="column-list"><div id="f4ef0f18-e1e0-498e-af99-b5ae14e709ee" style="width:37.5%" class="column"><p id="d09fe456-62f0-464a-9251-b04d756c6ccc" class="">
+</p><p id="018baf6a-c5ec-4563-b680-d8026e49dd8d" class="">
+</p><p id="f29b9ba3-fb8d-4baa-aedb-27e7feee6551" class="">相机型号：富士X-S10</p><p id="707bcaec-1e2e-4e85-8300-69107fc7e6b8" class="">镜头型号：富士XF35mm F2</p><p id="a36c5287-8260-464e-8276-1c3a6b311c95" class="">等效焦距：53mm</p><p id="72b82526-e082-42e6-9549-deb1ee1d23fd" class="">曝光时间：1/320秒</p><p id="383a6fc5-b5bd-4866-ad9f-2532044cb895" class="">光圈：f/3.6</p><p id="64f1d3ee-c0f6-4058-9d30-ac8b6c2c8b70" class="">感光度：640</p><ul id="9886fc6b-9d1f-4b07-9ffe-1126ebd0df6f" class="block-color-gray_background toggle"><li><details close=""><summary>tips</summary><ul id="7c99c494-5829-4064-af78-dc6fa8392b22" class="bulleted-list"><li style="list-style-type:disc">用手机打电话的人（蓝）</li></ul><ul id="045d773d-e116-4589-bd4e-2d867c1dc15a" class="bulleted-list"><li style="list-style-type:disc">电话亭（红）</li></ul><ul id="6f46c18a-4299-4734-9b4a-a2c5fc2b7e6d" class="bulleted-list"><li style="list-style-type:disc">街对岸的5G营业厅（蓝）</li></ul></details></li></ul></div><div id="01c64935-a331-412e-bf17-98921d50075a" style="width:62.5%" class="column"><h2 id="5b029031-877f-4128-8b8e-9bd4ff5f7379" class="" align="right">通讯发展史</h2><figure id="045925e1-626b-4071-981f-928737502fa0" class="image"><a href="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A93-%25E5%25B0%258F.png"><img style="width:2047px" src="../../images/time/%25E9%2599%2588%25E4%25BD%25A9%25E4%25BD%25A93-%25E5%25B0%258F.png"/></a></figure></div></div><p id="cbccf29f-5a9d-43d6-b469-26348db0d8be" class="">
+</p></div></article></body></html>
